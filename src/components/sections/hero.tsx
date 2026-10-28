@@ -45,7 +45,7 @@ export function Hero() {
             )}
           </div>
         </div>
-        <div className="mt-20 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-[11px] uppercase tracking-wider text-zinc-500">
+        <div className="mt-20 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-5 text-[11px] uppercase tracking-wider text-white">
           <span>React.js</span>
           <span className="text-[#b8f36b]">/</span>
           <span>Next.js</span>
