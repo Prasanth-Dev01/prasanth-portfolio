@@ -1,0 +1,6 @@
+node_modules
+.next
+out
+.env*
+.bun-tmp
+*.tsbuildinfo

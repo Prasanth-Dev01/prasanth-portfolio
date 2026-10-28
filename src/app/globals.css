@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+:root {
+  --background: #0a0a0a;
+  --foreground: #f4f4f0;
+  --muted: #a1a1aa;
+  --accent: #b8f36b;
+  --line: #272727;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+::selection {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+.shell {
+  width: min(1180px, calc(100% - 48px));
+  margin-inline: auto;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.section-pad {
+  padding: 120px 0;
+  border-top: 1px solid var(--line);
+}
+.display {
+  font-size: clamp(60px, 11.2vw, 148px);
+  line-height: 0.86;
+  letter-spacing: -0.085em;
+  font-weight: 700;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.grid-lines {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 25% 100%;
+}
+.outline-text {
+  -webkit-text-stroke: 1px #515151;
+  color: transparent;
+}
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 36px, 1180px);
+  }
+  .section-pad {
+    padding: 82px 0;
+  }
+  .grid-lines {
+    background-size: 50% 100%;
+  }
+}
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -7px;
+  height: 1px;
+  content: '';
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+.nav-arrow,
+.social-arrow,
+.contact-arrow {
+  transition: transform 0.25s ease;
+}
+.nav-contact:hover .nav-arrow,
+.social-link:hover .social-arrow,
+.contact-link:hover .contact-arrow {
+  transform: translate(2px, -2px);
+}
+.about-spark {
+  animation: soft-pulse 2.6s ease-in-out infinite;
+}
+@keyframes soft-pulse {
+  50% {
+    opacity: 0.55;
+    transform: scale(0.78);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@media (max-width: 640px) {
+  .display {
+    font-size: clamp(42px, 12.3vw, 72px);
+  }
+}
