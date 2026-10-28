@@ -22,3 +22,13 @@ bun run typecheck
 bun run build
 ```
 
+
+## future commits
+
+```bash
+git add .
+git commit -m "Update portfolio"
+git push
+
+```
+
